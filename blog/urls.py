@@ -16,6 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+admin.site.site_header = 'Super Blog admin' # Change title
+admin.site.site_title = 'Super Blog admin' # Change Url title
+admin.site.index_title = 'Super Blog administration' # Change title2
+
 urlpatterns = [
     path('admin/', admin.site.urls),
 ]
