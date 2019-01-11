@@ -3,7 +3,7 @@ from django.utils import timezone
 
 from django_summernote.admin import SummernoteModelAdmin
 
-from main.models import Blog
+from main.models import Blog, Comment
 
 
 class BlogAdmin(SummernoteModelAdmin):
@@ -46,3 +46,4 @@ class BlogAdmin(SummernoteModelAdmin):
 
 
 admin.site.register(Blog, BlogAdmin)
+admin.site.register(Comment)

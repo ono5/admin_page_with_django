@@ -27,3 +27,9 @@ python manage.py shell
 
 [django-summoernote](https://github.com/summernote/django-summernote)
 
+# Model relations
+One to one(Blog and BlogSettings)
+
+One to many(Blog and Comments)
+
+Many to Many(Blogs and Tags)
