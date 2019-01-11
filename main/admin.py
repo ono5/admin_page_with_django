@@ -11,6 +11,7 @@ class BlogAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug': ('title', )}
     list_per_page = 50
     actions = ('set_blogs_to_published', )
+    date_hierarchy = 'date_created'
 
     def get_ordering(self, request):
         if request.user.is_superuser:
