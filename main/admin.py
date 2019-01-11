@@ -13,6 +13,7 @@ class CommentInline(admin.StackedInline):
     fields = ('text', 'is_active')
     # Attach add another comment
     extra = 1
+    classes = ('collapse', ) # turn on or off comment
 
 
 class BlogAdmin(SummernoteModelAdmin):
@@ -31,6 +32,7 @@ class BlogAdmin(SummernoteModelAdmin):
         ('Advanced options', {
             'fields': ('is_draft', ),
             'description': 'Opstions to configure blog creation',
+            'classes': ('collapse', ), # turn on or off advance option
         })
     )
 
