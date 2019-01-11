@@ -45,5 +45,11 @@ class BlogAdmin(SummernoteModelAdmin):
     set_blogs_to_published.short_description = 'Mark selected blog as published'
 
 
+class CommentAdmin(admin.ModelAdmin):
+
+    list_display = ('blog', 'text', 'date_created', 'is_active')
+
+
+# Register setting content
 admin.site.register(Blog, BlogAdmin)
-admin.site.register(Comment)
+admin.site.register(Comment, CommentAdmin)

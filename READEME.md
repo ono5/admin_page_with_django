@@ -21,6 +21,15 @@ python manage.py shell
 <Blog: Almost within major establish.>
 <Blog: Fly enter together reflect.>
 
+
+for blog in Blog.objects.iterator():
+...     comments = [Comment(text=faker.paragraph()) for _ in range(0, 3)]
+...     comments = [Comment(text=faker.paragraph(), blog=blog) for _ in range(0, 3)]
+...     Comment.objects.bulk_create(comments)
+ Comment.objects.count()
+1510
+
+
 ```
 
 # rich editor
