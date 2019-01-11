@@ -1,4 +1,5 @@
 from django.contrib import admin
+from django.db.models import Count
 from django.utils import timezone
 
 from django_summernote.admin import SummernoteModelAdmin
@@ -18,7 +19,12 @@ class CommentInline(admin.StackedInline):
 
 class BlogAdmin(SummernoteModelAdmin):
 
-    list_display = ('title', 'date_created', 'last_modified', 'is_draft', 'days_since_creation')
+    list_display = ('title',
+                    'date_created',
+                    'last_modified',
+                    'is_draft',
+                    'days_since_creation',
+                    'no_of_comments',)
     list_filter = ('is_draft', 'date_created')
     search_fields = ('title', )
     prepopulated_fields = {'slug': ('title', )}
@@ -38,6 +44,17 @@ class BlogAdmin(SummernoteModelAdmin):
 
     summernote_fields = ('body',)
     inlines = (CommentInline, )
+
+    def get_queryset(self, request):
+        """Override queryset"""
+        queryset = super().get_queryset(request)
+        queryset = queryset.annotate(comments_count=Count('comments'))
+        return queryset
+
+    def no_of_comments(self, blog):
+        """Inform comment number"""
+        return blog.comments_count
+    no_of_comments.admin_order_field = 'comments_count'
 
     def days_since_creation(self, blog):
         """diff date to show on the list"""
