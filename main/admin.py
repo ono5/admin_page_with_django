@@ -44,6 +44,7 @@ class BlogAdmin(SummernoteModelAdmin):
 
     summernote_fields = ('body',)
     inlines = (CommentInline, )
+    filter_horizontal = ('categories', )
 
     def get_queryset(self, request):
         """Override queryset"""
