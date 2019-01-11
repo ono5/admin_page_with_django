@@ -9,6 +9,7 @@ class Blog(models.Model):
     last_modified = models.DateTimeField(auto_now=True)
     is_draft = models.BooleanField(default=True)
     slug = models.SlugField(max_length=100)
+    categories = models.ManyToManyField('main.Category')
 
     def __str__(self):
         return self.title
@@ -23,3 +24,12 @@ class Comment(models.Model):
 
     def __str__(self):
         return self.text
+
+
+class Category(models.Model):
+
+    name = models.CharField(max_length=100)
+    is_active = models.BooleanField(default=True)
+
+    def __str__(self):
+        return self.name

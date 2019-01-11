@@ -4,7 +4,7 @@ from django.utils import timezone
 
 from django_summernote.admin import SummernoteModelAdmin
 
-from main.models import Blog, Comment
+from main.models import Blog, Comment, Category
 
 
 # class CommentInline(admin.TabularInline):
@@ -85,3 +85,4 @@ class CommentAdmin(admin.ModelAdmin):
 # Register setting content
 admin.site.register(Blog, BlogAdmin)
 admin.site.register(Comment, CommentAdmin)
+admin.site.register(Category)
