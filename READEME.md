@@ -23,3 +23,7 @@ python manage.py shell
 
 ```
 
+# rich editor
+
+[django-summoernote](https://github.com/summernote/django-summernote)
+

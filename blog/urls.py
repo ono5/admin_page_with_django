@@ -14,7 +14,9 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.conf import settings
+from django.conf.urls.static import static
+from django.urls import include, path
 
 admin.site.site_header = 'Super Blog admin' # Change title
 admin.site.site_title = 'Super Blog admin' # Change Url title
@@ -22,4 +24,10 @@ admin.site.index_title = 'Super Blog administration' # Change title2
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('summernote/', include('django_summernote.urls')),
 ]
+
+# https://docs.djangoproject.com/en/1.11/topics/files/
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
