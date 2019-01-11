@@ -6,6 +6,15 @@ from django_summernote.admin import SummernoteModelAdmin
 from main.models import Blog, Comment
 
 
+# class CommentInline(admin.TabularInline):
+class CommentInline(admin.StackedInline):
+
+    model = Comment
+    fields = ('text', 'is_active')
+    # Attach add another comment
+    extra = 1
+
+
 class BlogAdmin(SummernoteModelAdmin):
 
     list_display = ('title', 'date_created', 'last_modified', 'is_draft', 'days_since_creation')
@@ -26,6 +35,7 @@ class BlogAdmin(SummernoteModelAdmin):
     )
 
     summernote_fields = ('body',)
+    inlines = (CommentInline, )
 
     def days_since_creation(self, blog):
         """diff date to show on the list"""
