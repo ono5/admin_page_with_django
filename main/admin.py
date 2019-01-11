@@ -58,6 +58,9 @@ class BlogAdmin(SummernoteModelAdmin):
 class CommentAdmin(admin.ModelAdmin):
 
     list_display = ('blog', 'text', 'date_created', 'is_active')
+    # You can edit item without into fix page
+    list_editable = ('text', 'is_active', )
+    list_per_page = 20
 
 
 # Register setting content
