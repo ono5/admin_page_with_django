@@ -54,6 +54,17 @@ class BlogAdmin(SummernoteModelAdmin):
     inlines = (CommentInline, )
     filter_horizontal = ('categories', )
 
+    def get_actions(self, request):
+        actions = super().get_actions(request)
+        try:
+            del actions['delete_selected']
+        except KeyError:
+            pass
+        return actions
+
+    def has_delete_permission(self, request, obj=None):
+        return False
+
     def get_queryset(self, request):
         """Override queryset"""
         queryset = super().get_queryset(request)
