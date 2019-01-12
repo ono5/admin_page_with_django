@@ -4,10 +4,12 @@ from django.utils import timezone
 
 from django_admin_listfilter_dropdown.filters import RelatedDropdownFilter
 from django_summernote.admin import SummernoteModelAdmin
+from import_export.admin import ImportExportModelAdmin
 from leaflet.admin import LeafletGeoAdmin
 from rangefilter.filter import DateTimeRangeFilter
 
 from main.models import Blog, Comment, Category, Place
+from main.resources import CommentResource
 
 
 # class CommentInline(admin.TabularInline):
@@ -81,7 +83,8 @@ class BlogAdmin(SummernoteModelAdmin):
     set_blogs_to_published.short_description = 'Mark selected blog as published'
 
 
-class CommentAdmin(admin.ModelAdmin):
+# class CommentAdmin(admin.ModelAdmin):
+class CommentAdmin(ImportExportModelAdmin):
 
     list_display = ('blog', 'text', 'date_created', 'is_active')
     # You can edit item without into fix page
@@ -91,6 +94,7 @@ class CommentAdmin(admin.ModelAdmin):
     list_filter = (
         ('blog', RelatedDropdownFilter),
     )
+    resource_class = CommentResource
 
 # Register setting content
 admin.site.register(Blog, BlogAdmin)

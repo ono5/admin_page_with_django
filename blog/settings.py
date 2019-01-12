@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'rangefilter',
     'leaflet',
     'djgeojson',
+    'import_export',
 
     'django.contrib.admin',
     'django.contrib.auth',
