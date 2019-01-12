@@ -3,3 +3,10 @@ Faker==1.0.1
 django-summernote
 django-admin-list-filter-dropdown
 django-admin-rangefilter
+django-leaflet
+django-geojson [field]
+
+
+
+
+

@@ -2,11 +2,12 @@ from django.contrib import admin
 from django.db.models import Count
 from django.utils import timezone
 
+from django_admin_listfilter_dropdown.filters import RelatedDropdownFilter
 from django_summernote.admin import SummernoteModelAdmin
-from django_admin_listfilter_dropdown.filters import DropdownFilter, RelatedDropdownFilter, ChoiceDropdownFilter
+from leaflet.admin import LeafletGeoAdmin
 from rangefilter.filter import DateTimeRangeFilter
 
-from main.models import Blog, Comment, Category
+from main.models import Blog, Comment, Category, Place
 
 
 # class CommentInline(admin.TabularInline):
@@ -95,3 +96,5 @@ class CommentAdmin(admin.ModelAdmin):
 admin.site.register(Blog, BlogAdmin)
 admin.site.register(Comment, CommentAdmin)
 admin.site.register(Category)
+admin.site.register(Place, LeafletGeoAdmin)
+

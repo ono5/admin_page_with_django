@@ -69,6 +69,11 @@ Many to Many(Blogs and Tags)
 # range filter
 [django-admin-rangefilter](https://github.com/silentsokolov/django-admin-rangefilter)
 
+# Leaflet
+[Leaflet](https://django-leaflet.readthedocs.io/en/latest/)
+
+# geojson
+[django-geojson](https://django-geojson.readthedocs.io/en/latest/)
 
 
 

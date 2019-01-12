@@ -1,5 +1,7 @@
 from django.db import models
 
+from djgeojson.fields import PointField
+
 
 class Blog(models.Model):
 
@@ -36,3 +38,12 @@ class Category(models.Model):
 
     class Meta:
         verbose_name_plural = 'Categories'
+
+
+class Place(models.Model):
+
+    name = models.CharField(max_length=255)
+    location = PointField()
+
+    def __str__(self):
+        return self.name

@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django_summernote',
     'django_admin_listfilter_dropdown',
     'rangefilter',
+    'leaflet',
+    'djgeojson',
 
     'django.contrib.admin',
     'django.contrib.auth',
