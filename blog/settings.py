@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'djgeojson',
     'import_export',
     'grappelli',
+    'admin_honeypot',
 
     'django.contrib.admin',
     'django.contrib.auth',

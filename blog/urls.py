@@ -23,9 +23,11 @@ admin.site.site_title = 'Super Blog admin' # Change Url title
 admin.site.index_title = 'Super Blog administration' # Change title2
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    # path('admin/', admin.site.urls),
     path('summernote/', include('django_summernote.urls')),
     path('grappelli/', include('grappelli.urls')),
+    path('admin/', include('admin_honeypot.urls', namespace='admin_honeypot')),
+    path('secret/', admin.site.urls),
 ]
 
 # https://docs.djangoproject.com/en/1.11/topics/files/

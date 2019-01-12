@@ -81,8 +81,8 @@ Many to Many(Blogs and Tags)
 # Grappelli
 [Django Grappelli](https://django-grappelli.readthedocs.io/en/latest/)
 
-
-
+# django-admin-honeypot
+[django-admin-honeypot](https://github.com/dmpayton/django-admin-honeypot)
 
 
 

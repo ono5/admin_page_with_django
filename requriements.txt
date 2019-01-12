@@ -7,6 +7,6 @@ django-leaflet
 django-geojson [field]
 django-import-export
 django-grappelli
-
+django-admin-honeypot
 
 
