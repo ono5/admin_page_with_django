@@ -95,6 +95,8 @@ class CommentAdmin(ImportExportModelAdmin):
         ('blog', RelatedDropdownFilter),
     )
     resource_class = CommentResource
+    list_select_related = ('blog', )
+    raw_id_fields = ('blog', )
 
 # Register setting content
 admin.site.register(Blog, BlogAdmin)
