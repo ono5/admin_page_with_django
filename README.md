@@ -66,8 +66,8 @@ Many to Many(Blogs and Tags)
 
 [django-admin-list-filter-dropdown](https://github.com/mrts/django-admin-list-filter-dropdown)
 
-
-
+# range filter
+[django-admin-rangefilter](https://github.com/silentsokolov/django-admin-rangefilter)
 
 
 

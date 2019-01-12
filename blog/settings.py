@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     # 3rd-party
     'django_summernote',
     'django_admin_listfilter_dropdown',
+    'rangefilter',
 
     'django.contrib.admin',
     'django.contrib.auth',

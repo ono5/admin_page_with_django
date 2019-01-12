@@ -4,6 +4,7 @@ from django.utils import timezone
 
 from django_summernote.admin import SummernoteModelAdmin
 from django_admin_listfilter_dropdown.filters import DropdownFilter, RelatedDropdownFilter, ChoiceDropdownFilter
+from rangefilter.filter import DateTimeRangeFilter
 
 from main.models import Blog, Comment, Category
 
@@ -26,7 +27,10 @@ class BlogAdmin(SummernoteModelAdmin):
                     'is_draft',
                     'days_since_creation',
                     'no_of_comments',)
-    list_filter = ('is_draft', 'date_created')
+    list_filter = (
+        'is_draft',
+        ('date_created', DateTimeRangeFilter),
+    )
     search_fields = ('title', )
     prepopulated_fields = {'slug': ('title', )}
     list_per_page = 50

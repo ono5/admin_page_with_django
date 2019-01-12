@@ -2,3 +2,4 @@ Django==2.0
 Faker==1.0.1
 django-summernote
 django-admin-list-filter-dropdown
+django-admin-rangefilter
