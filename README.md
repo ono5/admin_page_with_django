@@ -61,3 +61,21 @@ Many to Many(Blogs and Tags)
 * Django comes with a simple permissions system. It provides a way to assign permissions to specific users and groups of users.
 * add, change and delete permissions are created for each Django model defined in one of your installed applications.
 * Can create custom permissions
+
+# dropdown
+
+[django-admin-list-filter-dropdown](https://github.com/mrts/django-admin-list-filter-dropdown)
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -3,6 +3,7 @@ from django.db.models import Count
 from django.utils import timezone
 
 from django_summernote.admin import SummernoteModelAdmin
+from django_admin_listfilter_dropdown.filters import DropdownFilter, RelatedDropdownFilter, ChoiceDropdownFilter
 
 from main.models import Blog, Comment, Category
 
@@ -81,7 +82,10 @@ class CommentAdmin(admin.ModelAdmin):
     # You can edit item without into fix page
     list_editable = ('text', 'is_active', )
     list_per_page = 20
-
+    # list_filter = ('blog', ) # default filter
+    list_filter = (
+        ('blog', RelatedDropdownFilter),
+    )
 
 # Register setting content
 admin.site.register(Blog, BlogAdmin)
