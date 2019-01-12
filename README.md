@@ -42,3 +42,22 @@ One to one(Blog and BlogSettings)
 One to many(Blog and Comments)
 
 Many to Many(Blogs and Tags)
+
+# Users
+
+## Non staff users
+* is_staff=False and is_superuser=False
+* Cannot even access or login into the admin
+
+## Staff users
+* is_staff=True and is_useruser=False
+* Can log in but cannot do anything until they're given permission
+
+## Superusers
+* is_staff=True and is_superuser=True
+* Have all powers, can do anything even, even deleting themselves!
+
+## Default permissions
+* Django comes with a simple permissions system. It provides a way to assign permissions to specific users and groups of users.
+* add, change and delete permissions are created for each Django model defined in one of your installed applications.
+* Can create custom permissions
