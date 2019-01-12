@@ -6,7 +6,7 @@ django-admin-rangefilter
 django-leaflet
 django-geojson [field]
 django-import-export
-
+django-grappelli
 
 
 

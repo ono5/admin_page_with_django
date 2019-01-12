@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'leaflet',
     'djgeojson',
     'import_export',
+    'grappelli',
 
     'django.contrib.admin',
     'django.contrib.auth',
