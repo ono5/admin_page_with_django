@@ -31,6 +31,14 @@
 
 ・リッチエディタにできる
 
+・blog : comment のようにひもづけた状態で、画面表示できる
+
+```bash
+class CommentAdmin(admin.ModelAdmin):
+
+    list_display = ('blog', 'text', 'date_created', 'is_active')
+```
+
 # ユーザーデータ登録
 
 ユーザーデータを一気に登録する。
