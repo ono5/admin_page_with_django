@@ -39,6 +39,18 @@ class CommentAdmin(admin.ModelAdmin):
     list_display = ('blog', 'text', 'date_created', 'is_active')
 ```
 
+・表示項目を直接編集できるようにする
+
+```bash
+list_editable = ('text', 'is_active', )
+```
+
+・非表示にできる
+
+```bash
+'classes': ('collapse', ),
+```
+
 # ユーザーデータ登録
 
 ユーザーデータを一気に登録する。
